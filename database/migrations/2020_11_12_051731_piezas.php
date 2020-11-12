@@ -15,10 +15,10 @@ class Piezas extends Migration
     {
         Schema::create('Piezas', function (Blueprint $table) {
             $table->id();
-            $table->string('Nombre');
-            $table->string('Descripcion');
-            $table->integer('Num_piezas');
-            $table->float('Costo_pieza');
+            $table->string('nombre');
+            $table->string('descripcion');
+            $table->integer('num_piezas');
+            $table->float('costo_pieza');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class Piezas extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('piezas');
     }
 }
