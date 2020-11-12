@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("/piezas", "PiezasController@index");
+
+Route::get("/piezas/edita/{id}", "PiezasController@edit");
+Route::post("/piezas/edita/update", "PiezasController@update");
+Route::get("/piezas/elimina/{id}", "PiezasController@destroy");
+

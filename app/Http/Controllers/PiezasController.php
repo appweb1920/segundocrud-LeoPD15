@@ -15,7 +15,7 @@ class PiezasController extends Controller
     public function index()
     {
         $piezas = Pieza::all();
-        return($piezas);
+        return view("piezas")->with("piezas", $piezas);
     }
 
     /**
@@ -44,6 +44,7 @@ class PiezasController extends Controller
             $pieza->costo_pieza =$piezaNueva->costo_pieza;
             $pieza->save();
         }
+
     }
 
     /**
