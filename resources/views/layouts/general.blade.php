@@ -11,16 +11,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
     <style>
-        .container{
-            padding-top: 20px;
-        }
+        
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <a class="navbar-brand text-white" href="/piezas">Piezas</a>
     </nav>
-    <div class="container">
+    <div class=".container" style="padding-left:20px;padding-right:20px;padding-top:20px;">
     @yield('content')
     </div>
 </body>

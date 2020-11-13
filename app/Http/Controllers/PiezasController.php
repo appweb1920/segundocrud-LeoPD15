@@ -87,8 +87,10 @@ class PiezasController extends Controller
      * @param  \App\Pieza  $pieza
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pieza $pieza)
+    public function destroy($id)
     {
-        //
+        $p = Pieza::find($id);
+        $p->delete();
+        return redirect("/piezas");
     }
 }

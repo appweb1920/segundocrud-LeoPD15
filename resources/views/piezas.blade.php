@@ -1,7 +1,7 @@
 @extends('layouts.general')
 
 @section('content')
-    <div class="row justify-content-between"> 
+    <div class="row">
         <div class="col-4" >
         <h1>Agregar pieza</h1>
             <form action="/piezas/agrega" method="POST">
@@ -26,8 +26,35 @@
 
             </form>
         </div>
-        <div class="col-6">
+        <div class="col-8">
             <h1>Piezas</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Costo</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(!is_null($piezas))
+                        @foreach($piezas as $p)
+                        <tr>
+                            <th scope="row">{{$p->id}}</th>
+                            <td>{{$p->nombre}}</td>
+                            <td>{{$p->descripcion}}</td>
+                            <td>{{$p->num_piezas}}</td>
+                            <td>${{$p->costo_pieza}}</td>
+                            <td><a href="/piezas/edita/{{$p->id}}">Editar</a>/
+                                <a href="/piezas/elimina/{{$p->id}}">Elimiar</a></td>
+                        </tr>
+                        @endforeach
+                    @endif
+                </tbody>
+            </table>
         </div>
         
     </div>
