@@ -36,7 +36,7 @@ class PiezasController extends Controller
      */
     public function store(Request $piezaNueva)
     {   
-        if(!is_null($pieza->nombre)){
+        if(!is_null($piezaNueva->nombre)){
             $pieza = new Pieza;
             $pieza->nombre =$piezaNueva->nombre;
             $pieza->descripcion =$piezaNueva->descripcion;
@@ -44,7 +44,7 @@ class PiezasController extends Controller
             $pieza->costo_pieza =$piezaNueva->costo_pieza;
             $pieza->save();
         }
-
+        return redirect("/piezas");
     }
 
     /**

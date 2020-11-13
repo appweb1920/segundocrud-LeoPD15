@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get("/piezas", "PiezasController@index");
+Route::post("/piezas/agrega", "PiezasController@store");
 
 Route::get("/piezas/edita/{id}", "PiezasController@edit");
 Route::post("/piezas/edita/update", "PiezasController@update");
