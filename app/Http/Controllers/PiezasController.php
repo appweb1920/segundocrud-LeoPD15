@@ -79,6 +79,7 @@ class PiezasController extends Controller
      */
     public function update(Request $piezaMod)
     {
+        
         $pieza = Pieza::find($piezaMod->id);
         if(!is_null($pieza)){
             $pieza->nombre = $piezaMod->nombre;
